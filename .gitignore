@@ -1,0 +1,6 @@
+/node_modules/
+/makets/
+/.vscode/
+*.zip
+/build/
+package-lock.json

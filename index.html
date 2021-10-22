@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="Пример">
+	<meta name="keywords" content="Пример">
+	<link rel="shortcut icon" href="./favicon.ico" type="image/x-icon">
+	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+	<link rel="manifest" href="/site.webmanifest">
+	<meta name="msapplication-TileColor" content="#da532c">
+	<meta name="theme-color" content="#ffffff">
+	<!-- Fonts -->
+	<link rel="preload" href="./fonts/Rubik.woff2" as="font" type="font/woff2" crossorigin>
+	<link rel="preload" href="./fonts/Rubikmedium.woff2" as="font" type="font/woff2" crossorigin>
+	<link rel="preload" href="./fonts/Interbold.woff2" as="font" type="font/woff2" crossorigin>
+	<!-- CSS -->
+	<link rel="stylesheet" href="./css/normalize.css">
+	<link rel="stylesheet" href="./css/style.css">
+	<title>Example</title>
+</head>
+<body>
+	<!-- Header -->
+	<header class="header">
+		<div class="container">
+			<nav class="nav">
+				<a class="logo" href="./index.html">
+					<img src="./img/logo.svg" width="36" height="36" alt="Логотип">
+					<span class="visually-hidden">На главную</span>
+				</a>
+				<ul class="site-nav">
+					<li><a class="nav-link" href="#">About</a></li>
+					<li><a class="nav-link" href="#">Gallery</a></li>
+					<li><a class="nav-link current" href="#">Pricing</a></li>
+					<li><a class="nav-link" href="#">FAQ</a></li>
+					<li><a class="nav-link" href="#">Benefits</a></li>
+				</ul>
+				<ul class="user-nav">
+					<li>
+						<a class="user-links jq-sign-in btn btn-transparent" href="#">
+							sign in
+							<span class="visually-hidden">Войти</span>
+						</a>
+					</li>
+					<li>
+						<a class="user-links jq-sign-up btn" href="#">
+							sign up
+							<span class="visually-hidden">Зарегистрироваться</span>
+						</a>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</header>
+	<!--End Header -->
+	<main>
+		<!--Promo section -->
+		<section class="promo">
+			<object class="promo-img" type="image/svg+xml" data="./img/promo_bg.svg">
+			</object>
+
+			<div class="container">
+				<div class="promo-descr">
+					<h1 class="title promo-title">Many reasons to get up and start to get back in the business</h1>
+
+					<p class="promo-paragraph">The harder you work for something, the greater you’ll feel when you achieve it.</p>
+
+					<div class="promo-links-wrap">
+						<a class="btn promo-links btn-transparent" href="#">Learn More</a>
+
+						<a class="btn promo-links" href="#">Demo</a>
+					</div>
+
+					<div class="promo-video-wrap">
+						<div class="video">
+							<img src="./img/play.svg" width="40" height="40" alt="play">
+						</div>
+
+						<div class="video-text-wrap">
+							<p class="video-text">The harder you work for something, the greater you’ll feel when you achieve it.</p>
+
+							<a href="#" class="video-link">Watch preview</a>
+						</div>
+					</div>
+				</div>
+
+				<div class="sponsors-wrap">
+					<img class="sponsor-img" src="./img/sponsor_1.svg" width="117" height="25" alt="sponsor">
+					<img class="sponsor-img" src="./img/sponsor_2.svg" width="117" height="25" alt="sponsor">
+					<img class="sponsor-img" src="./img/sponsor_3.svg" width="92" height="25" alt="sponsor">
+					<img class="sponsor-img" src="./img/sponsor_4.svg" width="105" height="25" alt="sponsor">
+					<img class="sponsor-img" src="./img/sponsor_5.svg" width="56" height="25" alt="sponsor">
+					<img class="sponsor-img" src="./img/sponsor_6.svg" width="117" height="25" alt="sponsor">
+				</div>
+			</div>
+
+		</section>
+		<!--End Promo section -->
+	</main>
+
+	<footer class="footer"></footer>
+	<!-- JS -->
+	<script src="./js/jquery-3.6.0.min.js"></script>
+	<script src="./js/script.js"></script>
+</body>
+</html>
