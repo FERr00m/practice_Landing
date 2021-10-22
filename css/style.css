@@ -20,6 +20,7 @@
 	src: local('Inter Bold'), local('Inter-Bold'), url('../fonts/Interbold.woff2') format('woff2'), url('../fonts/Interbold.woff') format('woff');
 	font-weight: 700;
 	font-style: normal;
+	font-display: swap;
 }
 /*=====End Fonts=====*/
 
@@ -278,11 +279,10 @@ body {
 /*=====END Promo section Styles=====*/
 
 /*=====Choice section Styles=====*/
-/*=====END Choice section Styles=====*/
 .choice {
 	position: relative;
 	min-height: 382px;
-	margin-bottom: 217px;
+	margin-bottom: 161px;
 }
 .choice-img {
 	position: absolute;
@@ -336,6 +336,43 @@ body {
 .features-item__text {
 	font-size: 1.4rem;
 }
+/*=====END Choice section Styles=====*/
+
+/*=====Increase section Styles=====*/
+.increase {
+	margin-bottom: 90px;
+}
+.increase-wrap {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 0 50px 0 79px;
+}
+.increase-descr {
+	max-width: 470px;
+	align-self: flex-start;
+	padding-top: 62px;
+}
+.increase-title {
+	margin-top: 0;
+}
+.accent {
+	color: var(--brand-color);
+}
+.increase-paragraph {
+	font-size: 1.5rem;
+	line-height: 2.8rem;
+	letter-spacing: 0.5px;
+	margin-bottom: 43px;
+}
+.increase-link {
+	width: 155px;
+	height: 48px;
+}
+.object-wrap {
+	max-width: 100%;
+}
+/*=====END Increase section Styles=====*/
 /*=====Adaptive Styles=====*/
 @media (max-width: 1848.99px) {
 }
