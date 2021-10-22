@@ -67,7 +67,7 @@ a {
 a:visited {
 	opacity: 0.7;
 }
-a:hover,
+/* a:hover,
 a:active,
 button:hover {
 	opacity: 0.7;
@@ -76,7 +76,7 @@ button:hover {
 a.active:hover,
 button.active:hover {
 	opacity: 1;
-}
+} */
 img {
 	max-width: 100%;
 	height: auto;
@@ -172,6 +172,91 @@ body {
 object[class*=-img] {
 	z-index: -1;
 }
+/*===Hover Effects*/
+/* Underline From Center */
+.hvr-underline-from-center {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  position: relative;
+  overflow: hidden;
+}
+.hvr-underline-from-center:before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  left: 51%;
+  right: 51%;
+  bottom: 0;
+  background: var(--brand-color);
+  height: 4px;
+  -webkit-transition-property: left, right;
+  transition-property: left, right;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
+}
+.hvr-underline-from-center:hover:before,
+.hvr-underline-from-center:focus:before,
+.hvr-underline-from-center:active:before {
+  left: 0;
+  right: 0;
+}
+/* Shutter Out Horizontal */
+.hvr-shutter-out-horizontal {
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  position: relative;
+  -webkit-transition-property: color;
+  transition-property: color;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+}
+.hvr-shutter-out-horizontal:before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: var(--brand-color);
+  -webkit-transform: scaleX(0);
+  transform: scaleX(0);
+  -webkit-transform-origin: 50%;
+  transform-origin: 50%;
+  -webkit-transition-property: transform;
+  transition-property: transform;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
+}
+.hvr-shutter-out-horizontal.another:before {
+	background-color: transparent;
+}
+.hvr-shutter-out-horizontal:hover,
+.hvr-shutter-out-horizontal:focus,
+.hvr-shutter-out-horizontal:active {
+  color: #ffffff;
+}
+.hvr-shutter-out-horizontal.another:hover,
+.hvr-shutter-out-horizontal.another:focus,
+.hvr-shutter-out-horizontal.another:active {
+  color: var(--brand-color);
+}
+.hvr-shutter-out-horizontal:hover:before,
+.hvr-shutter-out-horizontal:focus:before,
+.hvr-shutter-out-horizontal:active:before {
+  -webkit-transform: scaleX(1);
+  transform: scaleX(1);
+}
+/*===END Hover Effects*/
 /*=====END Styles root=====*/
 
 /*=====Header Styles=====*/
@@ -206,6 +291,16 @@ object[class*=-img] {
 .user-links {
 	width: 112px;
 	height: 36px;
+}
+.nav-link.active::after {
+	content: "";
+  position: absolute;
+  z-index: -1;
+  left: 0;
+  bottom: 0;
+  background: var(--brand-color);
+  height: 4px;
+	width: 100%;
 }
 /*=====END Header Styles=====*/
 
@@ -423,10 +518,6 @@ object[class*=-img] {
 	position: relative;
 	min-height: 553px;
 	margin-bottom: 48px;
-	/* background-image: url(../img/create_bg.png);
-	background-position: center;
-	background-repeat: no-repeat;
-	background-size: contain; */
 }
 .create-img {
 	position: absolute;
