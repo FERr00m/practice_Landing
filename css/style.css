@@ -96,7 +96,7 @@ body {
 	font-style: normal;
 	font-weight: 400;
 	color: var(--font-main-color);
-	line-height: 1rem;
+	line-height: 2.2rem;
 	position: relative;
 	background: var(--main-bg-color);
 	background-repeat: no-repeat;
@@ -156,6 +156,13 @@ body {
 .btn:hover {
 	text-decoration: none;
 }
+.center-absolute {
+	position: absolute;
+	top: 50%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+}
 /*=====END Styles root=====*/
 
 /*=====Header Styles=====*/
@@ -165,7 +172,7 @@ body {
 .nav {
 	display: flex;
 	align-items: center;
-	margin-bottom: 104px;
+	margin-bottom: 135px;
 }
 .logo {
 	margin-right: 44px;
@@ -197,6 +204,7 @@ body {
 .promo {
 	position: relative;
 	min-height: 603px;
+	margin-bottom: 100px;
 }
 .promo-img {
 	position: absolute;
@@ -209,7 +217,6 @@ body {
 }
 .promo-paragraph {
 	font-size: 1.8rem;
-	line-height: 22px;
 	max-width: 468px;
 	margin-bottom: 40px;
 }
@@ -254,7 +261,6 @@ body {
 .video-text {
 	margin: 0;
 	font-size: 1.6rem;
-	line-height: 22px;
 	margin-bottom: 15px;
 }
 .video-link {
@@ -271,6 +277,65 @@ body {
 }
 /*=====END Promo section Styles=====*/
 
+/*=====Choice section Styles=====*/
+/*=====END Choice section Styles=====*/
+.choice {
+	position: relative;
+	min-height: 382px;
+	margin-bottom: 217px;
+}
+.choice-img {
+	position: absolute;
+	bottom: 0;
+	opacity: .3;
+}
+.choice-img.left {
+	left: 0;
+}
+.choice-img.right {
+	right: 0;
+}
+.choice-wrap {
+	padding: 0 50px;
+	padding-bottom: 8px;
+}
+.choice-title,
+.choice-paragraph {
+	text-align: center;
+}
+.choice-title {
+	margin: 0 0 26px;
+}
+.choice-paragraph {
+	font-size: 1.6rem;
+	margin-bottom: 50px;
+}
+.features-row {
+	display: flex;
+	align-items: flex-start;
+	justify-content: space-between;
+	gap: 15px;
+	margin-bottom: 35px;
+}
+.features-row:last-child {
+	margin-bottom: 0;
+}
+.features-item {
+	display: flex;
+	align-items: flex-start;
+	width: 299px;
+	min-height: 106px;
+	column-gap: 28px;
+}
+.features-item__title {
+	font-size: 1.8rem;
+	margin: 0;
+	color: var(--font-special-color);
+	font-weight: 500;
+}
+.features-item__text {
+	font-size: 1.4rem;
+}
 /*=====Adaptive Styles=====*/
 @media (max-width: 1848.99px) {
 }
