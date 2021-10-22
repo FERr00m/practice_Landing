@@ -388,10 +388,14 @@ object[class*=-img] {
 .ways-img {
 	position: absolute;
 	left: 0;
-	bottom: 60px;
+	bottom: 75px;
 }
 .ways-row {
 	align-items: flex-start;
+}
+.ways-title {
+	max-width: 864px;
+	margin: 0 auto 32px;
 }
 .ways-title,
 .ways-paragraph {
@@ -413,6 +417,36 @@ object[class*=-img] {
 	text-align: center;
 }
 /*=====END Ways section Styles=====*/
+
+/*=====Create section Styles=====*/
+.create {
+	position: relative;
+	min-height: 553px;
+	margin-bottom: 48px;
+	/* background-image: url(../img/create_bg.png);
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: contain; */
+}
+.create-img {
+	position: absolute;
+	bottom: 0;
+	left: 50%;
+	margin-right: -50%;
+	transform: translate(-50%, 0%);
+	z-index: -1;
+}
+.create-title {
+	max-width: 750px;
+	margin: 0 auto 46px;
+	text-align: center;
+}
+.create-link {
+	width: 160px;
+	height: 54px;
+	margin: 0 auto;
+}
+/*=====END Create section Styles=====*/
 
 /*=====Adaptive Styles=====*/
 @media (max-width: 1848.99px) {
