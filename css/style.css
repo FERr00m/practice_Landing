@@ -164,6 +164,14 @@ body {
   margin-right: -50%;
   transform: translate(-50%, -50%);
 }
+.row {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+object[class*=-img] {
+	z-index: -1;
+}
 /*=====END Styles root=====*/
 
 /*=====Header Styles=====*/
@@ -311,9 +319,7 @@ body {
 	margin-bottom: 50px;
 }
 .features-row {
-	display: flex;
 	align-items: flex-start;
-	justify-content: space-between;
 	gap: 15px;
 	margin-bottom: 35px;
 }
@@ -373,6 +379,41 @@ body {
 	max-width: 100%;
 }
 /*=====END Increase section Styles=====*/
+
+/*=====Ways section Styles=====*/
+.ways {
+	position: relative;
+	margin-bottom: 169px;
+}
+.ways-img {
+	position: absolute;
+	left: 0;
+	bottom: 60px;
+}
+.ways-row {
+	align-items: flex-start;
+}
+.ways-title,
+.ways-paragraph {
+	text-align: center;
+}
+.ways-paragraph {
+	margin: 0 auto;
+	max-width: 414px;
+	margin-bottom: 48px;
+}
+.ways-item {
+	width: 291px;
+	min-height: 118px;
+}
+.ways-item__digit {
+	text-align: center;
+}
+.waiys-item__text {
+	text-align: center;
+}
+/*=====END Ways section Styles=====*/
+
 /*=====Adaptive Styles=====*/
 @media (max-width: 1848.99px) {
 }
