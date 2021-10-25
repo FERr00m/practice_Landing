@@ -2,7 +2,7 @@
 /*Rubik*/
 @font-face {
 	font-family: 'Rubik';
-	src: local('Rubik'), local('Rubik-Regular'), url('../fonts/') format('woff2'), url('../fonts/Rubik.woff') format('woff');
+	src: local('Rubik'), local('Rubik-Regular'), url('../fonts/Rubik.woff2') format('woff2'), url('../fonts/Rubik.woff') format('woff');
 	font-weight: 400;
 	font-style: normal;
 	font-display: swap;
@@ -30,7 +30,7 @@
 	--font-second-color: #B5B5B5;
 	--font-special-color: #99EFD0;
 	--brand-color: #F2994A;
-	--main-bg-color: linear-gradient(222.26deg, #3B1D60 1.22%, #040D3E 106.28%);;
+	--main-bg-color: linear-gradient(222.26deg, #3B1D60 1.22%, #040D3E 106.28%);
 }
 html {
 	-webkit-box-sizing: border-box;
@@ -258,7 +258,7 @@ object[class*=-img] {
 .hvr-shutter-out-horizontal.another:hover,
 .hvr-shutter-out-horizontal.another:focus,
 .hvr-shutter-out-horizontal.another:active {
-  color: var(--font-main-color);
+  color: var(--brand-color);
 }
 .hvr-shutter-out-horizontal:hover:before,
 .hvr-shutter-out-horizontal:focus:before,
@@ -528,6 +528,13 @@ object[class*=-img] {
 }
 .sponsor-img {
 	opacity: .3;
+}
+.swiper {
+  width: 100%;
+  height: 70px;
+}
+.swiper-pagination-bullet-active {
+	background: var(--brand-color);
 }
 /*=====END Promo section Styles=====*/
 
