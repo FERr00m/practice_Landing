@@ -1,4 +1,5 @@
 /node_modules/
+.idea
 /makets/
 /.vscode/
 *.zip

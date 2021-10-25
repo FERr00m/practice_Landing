@@ -1,5 +1,6 @@
 window.addEventListener('DOMContentLoaded', function() {
 	try {
+		//swiper
 		const swiper = new Swiper('.swiper', {
 			// Optional parameters
 			direction: 'horizontal',
@@ -33,6 +34,34 @@ window.addEventListener('DOMContentLoaded', function() {
 				}
 			}
 		});
+	} catch (error) {
+		console.error(error);
+	}
+
+	try {
+		//Ajax form
+		const form = $('#form');
+
+		form.on('submit', function(e) {
+			e.preventDefault()
+			console.log($(this).serialize());
+
+			$.ajax({
+				type: "post",
+				url: "http://localhost:3000/",
+				"headers": {
+					"accept": "application/json",
+				},
+				success: function (response) {
+					console.log(response);
+				},
+				error: function(error) {
+					console.error(error)
+				}
+			});
+		})
+
+
 	} catch (error) {
 		console.error(error);
 	}

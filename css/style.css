@@ -841,6 +841,7 @@ object[class*=-img] {
 /* Check */
 .check {
 	padding-left: 1.2em;
+	cursor: pointer;
 }
 .check__input {
 	position: absolute;
