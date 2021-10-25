@@ -365,10 +365,20 @@
 
 					<p class="help-paragraph">There are many reasons to get down and start to get depressed about your situation.</p>
 
-					<form class="form-form" method="post">
-						<input class="form-input" type="email" name="email" placeholder="Your Email" required>
+					<form method="post">
+						<div class="inputs-wrap">
+							<input class="form-input" type="email" name="email" placeholder="Your Email" required>
 
-						<button class="btn form-btn hvr-bubble-float-left" type="submit">send</button>
+							<button class="btn form-btn hvr-bubble-float-left" type="submit">send</button>
+						</div>
+
+						<div class="form-agreement-wrap">
+							<label class="check option">
+								<input class="check__input" name="agree" checked="checked" type="checkbox" required>
+								<span class="check__box"></span>
+								I consent to my personal data
+						</label>
+						</div>
 					</form>
 
 					<p class="form-descr">No spam. Only releases, updates and discounts</p>
@@ -379,7 +389,101 @@
 	</main>
 	<!-- End Main -->
 	<!-- Footer -->
-	<footer class="footer"></footer>
+	<footer class="footer">
+		<object
+			class="footer-img"
+			type="image/svg+xml"
+			data="./img/footer_bg.svg"
+			alt="Footer background"
+			tabindex="-1">
+		</object>
+		<div class="container">
+			<div class="footer-wrap">
+				<div class="footer-head">
+					<p class="footer-name">ARShakir</p>
+
+					<ul class="socials">
+						<li>
+							<a href="#">
+								<img src="./img/Google.svg" width="40" height="40" alt="Instagram">
+								<span class="visually-hidden">Google</span>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<img src="./img/Twitter.svg" width="40" height="40" alt="Facebook">
+								<span class="visually-hidden">Twitter</span>
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<img src="./img/Facebook.svg" width="40" height="40" alt="Twitter">
+								<span class="visually-hidden">Facebook</span>
+							</a>
+						</li>
+					</ul>
+				</div>
+
+				<dl class="footer-nav row">
+					<div class="footer-site-nav">
+						<dt class="footer-nav-list-title">First</dt>
+						<dd>
+							<ul class="footer-nav-list">
+								<li><a href="#">First page</a></li>
+								<li><a href="#">Second page</a></li>
+								<li><a href="#">Third page</a></li>
+								<li><a href="#">Fourth page</a></li>
+							</ul>
+						</dd>
+					</div>
+
+					<div class="footer-site-nav">
+						<dt class="footer-nav-list-title">Second</dt>
+						<dd>
+							<ul class="footer-nav-list">
+								<li><a href="#">First page</a></li>
+								<li><a href="#">Second page</a></li>
+								<li><a href="#">Third page</a></li>
+								<li><a href="#">Fourth page</a></li>
+							</ul>
+						</dd>
+					</div>
+
+					<div class="footer-site-nav">
+						<dt class="footer-nav-list-title">Third</dt>
+						<dd>
+							<ul class="footer-nav-list">
+								<li><a href="#">First page</a></li>
+								<li><a href="#">Second page</a></li>
+								<li><a href="#">Third page</a></li>
+								<li><a href="#">Fourth page</a></li>
+							</ul>
+						</dd>
+					</div>
+
+					<div class="footer-site-nav">
+						<dt class="footer-nav-list-title">Fourth</dt>
+						<dd>
+							<ul class="footer-nav-list">
+								<li><a href="#">First page</a></li>
+								<li><a href="#">Second page</a></li>
+								<li><a href="#">Third page</a></li>
+								<li><a href="#">Fourth page</a></li>
+							</ul>
+						</dd>
+					</div>
+				</dl>
+
+				<div class="policy">
+					<p class="privacy-terms">
+						<a class="privacy-link" href="#">© Copyrights 2021</a>
+						<a class="privacy-link" href="#">Privacy policy</a>
+						<a class="privacy-link" href="#">Terms of service</a>
+					</p>
+				</div>
+			</div>
+		</div>
+	</footer>
 	<!-- End Footer -->
 	<!-- JS -->
 	<script src="./js/jquery-3.6.0.min.js"></script>

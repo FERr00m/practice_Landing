@@ -783,7 +783,7 @@ object[class*=-img] {
 	line-height: 2.2rem;
 	color: #95A1BB;
 }
-.form-form {
+.inputs-wrap {
 	display: flex;
 	justify-content: center;
 	margin: 0 auto;
@@ -818,6 +818,59 @@ object[class*=-img] {
 	color: #6D6D78;
 	padding: 0 20px;
 }
+.form-agreement-wrap {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.form-agreement {
+	cursor: pointer;
+}
+/* Option */
+.option {
+	display: block;
+	margin-bottom: 0.5em;
+}
+/* Check */
+.check {
+	padding-left: 1.2em;
+}
+.check__input {
+	position: absolute;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+}
+.check__box {
+	position: absolute;
+	margin-top: 0.2em;
+	margin-left: -25px;
+	width: 15px;
+	height: 15px;
+	overflow: hidden;
+	border-radius: 0.05em;
+	background-color: white;
+	background-repeat: no-repeat;
+	background-position: 50% 50%;
+	box-shadow: 0 0 0 0.1em var(--brand-color);
+}
+/* Checked */
+.check__input:checked + .check__box {
+	background-color: var(--brand-color);
+	background-image: url(../img/chech_icon.svg);
+}
+/* Focused */
+.check__input:focus + .check__box {
+	box-shadow:
+	0 0 0 0.2em var(--font-special-color);
+}
+/* Disabled */
+.check__input:disabled + .check__box {
+	box-shadow: 0 0 0 0.1em #9B9B9B;
+}
+.check__input:checked:disabled + .check__box {
+	background-color: #9B9B9B;
+}
 .form-input:focus,
 .form-input:active {
 	border-color: var(--brand-color);
@@ -829,6 +882,82 @@ object[class*=-img] {
 	text-align: center;
 }
 /*=====END Form section Styles=====*/
+
+/*=====Footer Styles=====*/
+.footer {
+	position: relative;
+	overflow: hidden;
+}
+.footer-img {
+	position: absolute;
+	left: 0;
+	bottom: 0;
+}
+.footer-wrap {
+	padding: 0 38px 60px;
+}
+.footer-head,
+.socials,
+.socials li a{
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+.footer-head {
+	margin-bottom: 94px;
+}
+.socials li {
+	margin-right: 16px;
+}
+.socials li:hover {
+	opacity: .5;
+}
+.socials li:last-child {
+	margin-right: 0;
+}
+.footer-name {
+	font-family: Inter;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 2.6rem;
+	line-height: 3.2rem;
+	letter-spacing: 0.325px;
+	color: var(--brand-color);
+}
+.footer-nav {
+	font-style: normal;
+	font-weight: normal;
+	font-size: 1.5rem;
+	line-height: 2rem;
+	letter-spacing: 0.2px;
+	color: #FFFFFF;
+	margin-bottom: 120px;
+}
+.footer-site-nav {
+	display: flex;
+	flex-direction: column;
+}
+.footer-site-nav dd {
+	margin: 0;
+}
+.footer-nav-list-title {
+	margin-bottom: 25px;
+	font-weight: bold;
+}
+.footer-nav-list li {
+	margin-bottom: 16px;
+}
+.footer-nav-list li:hover,
+.privacy-terms a:hover {
+	text-decoration: underline;
+}
+.privacy-terms {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 34px;
+}
+/*=====END Footer Styles=====*/
 
 /*=====Adaptive Styles=====*/
 @media (max-width: 1848.99px) {
