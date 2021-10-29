@@ -180,6 +180,14 @@ body {
 object[class*=-img] {
 	z-index: -1;
 }
+.burger-icon {
+	cursor: pointer;
+	transition: all .3s ease;
+}
+.burger-icon:hover {
+	transform: scale(1.1);
+	transition: all .3s ease;
+}
 /*===Hover Effects*/
 /* Underline From Center */
 .hvr-underline-from-center {
@@ -415,6 +423,7 @@ object[class*=-img] {
 	margin-bottom: 135px;
 }
 .logo {
+	flex-shrink: 0;
 	height: 36px;
 	margin-right: 44px;
 }
@@ -968,6 +977,14 @@ object[class*=-img] {
 /*=====END Footer Styles=====*/
 
 /*=====Adaptive Styles=====*/
-@media (max-width: 1848.99px) {
+@media (max-width: 1368.99px) {
+	html {
+		font-size: 12px;
+	}
+}
+@media (max-width: 800.99px) {
+	.burger-icon {
+		display: block;
+	}
 }
 /*=====END Adaptive Styles=====*/
