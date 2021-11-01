@@ -111,6 +111,9 @@ body {
 	background-repeat: no-repeat;
 	background-size: cover;
 }
+body.nav-active {
+	overflow: hidden;
+}
 .visually-hidden {
 	position: absolute;
 	width: 1px;
@@ -181,8 +184,12 @@ object[class*=-img] {
 	z-index: -1;
 }
 .burger-icon {
+	display: none;
+	position: fixed;
+	right: 40px;
 	cursor: pointer;
 	transition: all .3s ease;
+	z-index: 50;
 }
 .burger-icon:hover {
 	transform: scale(1.1);
@@ -421,6 +428,9 @@ object[class*=-img] {
 	display: flex;
 	align-items: center;
 	margin-bottom: 135px;
+}
+.close {
+	display: none;
 }
 .logo {
 	flex-shrink: 0;
@@ -985,6 +995,62 @@ object[class*=-img] {
 @media (max-width: 800.99px) {
 	.burger-icon {
 		display: block;
+	}
+	.header {
+		padding-top: 20px;
+	}
+	.nav {
+		padding: 15px;
+		position: relative;
+		align-items: center;
+		gap: 50px;
+		overflow: hidden;
+		position: fixed;
+		z-index: 999;
+		left: 0;
+		top: 0;
+		width: 100%;
+		height: 100%;
+		transform: translateX(-100%);
+		background-color: #000000ed;
+		flex-direction: column;
+		margin-bottom: 0;
+		transition: transform 1s ease;
+	}
+	.close {
+		position: absolute;
+		right: 30px;
+		top: 30px;
+		width: 40px;
+		height: 40px;
+		display: block;
+	}
+	.close div {
+		position: absolute;
+		top: 50%;
+		width: 100%;
+		height: 3px;
+		background-color: var(--brand-color);
+		transition: transform 1s ease;
+	}
+	.close div:first-child {
+		transform: rotate(45deg);
+	}
+	.close div:last-child {
+		transform: rotate(-45deg);
+	}
+	.close:hover div {
+		transform: rotate(0);
+	}
+	.nav.active {
+		transform: translateX(0%);
+	}
+	.site-nav {
+		flex-direction: column;
+	}
+	.logo,
+	.site-nav {
+		margin-right: 0;
 	}
 }
 /*=====END Adaptive Styles=====*/

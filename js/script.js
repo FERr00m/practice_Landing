@@ -65,4 +65,24 @@ window.addEventListener('DOMContentLoaded', function() {
 	} catch (error) {
 		console.error(error);
 	}
+
+	try {
+		//burger menu
+		const burger = $('.burger-icon'),
+			body = $('body'),
+			close = $('.close'),
+			nav = $('.nav');
+
+		burger.on('click', function() {
+			nav.toggleClass('active');
+			body.toggleClass('nav-active');
+
+		})
+		close.on('click', function() {
+			nav.toggleClass('active');
+			body.toggleClass('nav-active');
+		})
+	} catch (error) {
+		console.error(error);
+	}
 });
