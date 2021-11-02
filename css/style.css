@@ -987,6 +987,22 @@ object[class*=-img] {
 }
 /*=====END Footer Styles=====*/
 
+/*=====Modal Styles=====*/
+.modal-wrap {
+	display: none;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: #8476aa6b;
+	z-index: 200;
+}
+.loader {
+
+}
+/*=====END Modal Styles=====*/
+
 /*=====Adaptive Styles=====*/
 @media (max-width: 1368.99px) {
 	html {

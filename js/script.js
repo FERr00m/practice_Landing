@@ -39,28 +39,54 @@ window.addEventListener('DOMContentLoaded', function() {
 	}
 
 	try {
-		//Ajax form
-		const form = $('#form');
+		const form = document.getElementById('form');
 
-		form.on('submit', function(e) {
-			e.preventDefault()
-			console.log($(this).serialize());
+		const modalWrap = $('.modal-wrap'),
+			loader = $('.loader')
 
-			$.ajax({
-				type: "post",
-				url: "http://localhost:3000/",
-				"headers": {
-					"accept": "application/json",
+		form.addEventListener('submit', function(e) {
+			e.preventDefault();
+
+			let body = {},
+				data = new FormData(form);
+
+			data.forEach((val, key) => {
+        body[key] = val.toLowerCase().trim();
+      });
+
+			fetch(`https://melalex.ru/handlers/emailHandler.php`, {
+				method: "POST",
+				headers: {
+					'Content-type': 'application/json; charset=utf-8',
+					'Set-Cookie': 'SameSite=None'
 				},
-				success: function (response) {
-					console.log(response);
-				},
-				error: function(error) {
-					console.error(error)
+				credentials: 'include',
+				body: JSON.stringify(body)
+			})
+			.then(response => {
+					modalWrap.fadeIn()
+
+					if (!response.ok) throw Error(response.statusText);
+					setTimeout(() => {
+						loader.fadeOut();
+					}, 1000)
+					return response.json();
+			})
+			.then(data => {
+				if(data.answerFromServer === 'ok') {
+					console.log(data)
+				} else {
+					console.log('Ошиька на сервере')
 				}
+
+			})
+			.catch(error => {
+				setTimeout(() => {
+					loader.fadeOut();
+				}, 1000)
+				console.error(error)
 			});
 		})
-
 
 	} catch (error) {
 		console.error(error);
