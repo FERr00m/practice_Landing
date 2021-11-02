@@ -663,6 +663,7 @@ object[class*=-img] {
 }
 .ways-row {
 	align-items: flex-start;
+	gap: 20px;
 }
 .ways-title {
 	max-width: 864px;
@@ -747,7 +748,6 @@ object[class*=-img] {
 }
 .help-title {
 	font-size: 2.6rem;
-	line-height: 3.2rem;
 	letter-spacing: 0.325px;
 }
 .help-paragraph {
@@ -954,6 +954,7 @@ object[class*=-img] {
 .footer-nav {
 	font-style: normal;
 	font-weight: normal;
+	gap: 20px;
 	font-size: 1.5rem;
 	line-height: 2rem;
 	letter-spacing: 0.2px;
@@ -1003,6 +1004,7 @@ object[class*=-img] {
 		padding: 15px;
 		position: relative;
 		align-items: center;
+		justify-content: center;
 		gap: 50px;
 		overflow: hidden;
 		position: fixed;
@@ -1016,6 +1018,14 @@ object[class*=-img] {
 		flex-direction: column;
 		margin-bottom: 0;
 		transition: transform 1s ease;
+	}
+	.choice-wrap,
+	.increase-wrap,
+	.footer-wrap {
+		padding: 0;
+	}
+	.help .increase-wrap {
+		padding: 0;
 	}
 	.close {
 		position: absolute;
@@ -1033,10 +1043,10 @@ object[class*=-img] {
 		background-color: var(--brand-color);
 		transition: transform 1s ease;
 	}
-	.close div:first-child {
+	.close div.active:first-child {
 		transform: rotate(45deg);
 	}
-	.close div:last-child {
+	.close div.active:last-child {
 		transform: rotate(-45deg);
 	}
 	.close:hover div {
@@ -1051,6 +1061,86 @@ object[class*=-img] {
 	.logo,
 	.site-nav {
 		margin-right: 0;
+	}
+	.promo,
+	.choice,
+	.increase,
+	.ways,
+	.help {
+		margin-bottom: 50px;
+	}
+	.increase-descr {
+		padding-top: 0;
+	}
+	.increase-wrap {
+		flex-direction: column;
+		align-items: center;
+		gap: 60px;
+	}
+	.create {
+		min-height: 430px;
+	}
+	.title:not(.help-item__title) {
+		font-size: 3.5rem;
+		text-align: center;
+	}
+	.title.help-item__title {
+		font-size: 1.5rem;
+	}
+	.promo-paragraph {
+		text-align: center;
+	}
+	.promo-links-wrap {
+		justify-content: center;
+	}
+	.increase-descr {
+		max-width: inherit;
+	}
+	p[class*=-paragraph] {
+		text-align: center;
+	}
+	a[class*=-link]:not(.promo-links) {
+		margin: 0 auto;
+	}
+}
+@media (max-width: 560.99px) {
+	.inputs-wrap {
+		height: 122px;
+		gap: 10px;
+		flex-wrap: wrap;
+	}
+	.form-input,
+	.form-btn {
+		border-radius: 5px;
+	}
+	.ways-row {
+		flex-direction: column;
+		align-items: center;
+	}
+	.features-row {
+		flex-direction: column;
+	}
+	.ways-img {
+		display: none;
+	}
+	.help-descr .row {
+		flex-direction: column;
+		gap: 20px;
+	}
+	.help-item:first-child {
+		margin: 0;
+	}
+	.footer-nav {
+		flex-wrap: wrap;
+	}
+	.form-input {
+		font-size: 1.5rem;
+	}
+	.form-wrap {
+		padding: 20px 5px;
+	}
+	.promo-video-wrap {
+		flex-direction: column;
 	}
 }
 /*=====END Adaptive Styles=====*/

@@ -71,16 +71,18 @@ window.addEventListener('DOMContentLoaded', function() {
 		const burger = $('.burger-icon'),
 			body = $('body'),
 			close = $('.close'),
+			divs = $('.close div'),
 			nav = $('.nav');
 
 		burger.on('click', function() {
 			nav.toggleClass('active');
 			body.toggleClass('nav-active');
-
+			divs.toggleClass('active');
 		})
 		close.on('click', function() {
 			nav.toggleClass('active');
 			body.toggleClass('nav-active');
+			divs.toggleClass('active');
 		})
 	} catch (error) {
 		console.error(error);
