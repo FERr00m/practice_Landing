@@ -195,6 +195,9 @@ object[class*=-img] {
 	transform: scale(1.1);
 	transition: all .3s ease;
 }
+span.special {
+	color: var(--font-special-color);
+}
 /*===Hover Effects*/
 /* Underline From Center */
 .hvr-underline-from-center {
@@ -995,11 +998,52 @@ object[class*=-img] {
 	left: 0;
 	width: 100%;
 	height: 100%;
-	background-color: #8476aa6b;
+	background-color: #120a2699;
 	z-index: 200;
 }
-.loader {
-
+.modal-window-wrap {
+	display: none;
+	font-size: 2rem;
+	color: var(--brand-color);
+	padding: 25px;
+	max-width: 500px;
+	min-width: 320px;
+	min-height: 150px;
+	background-color: #000;
+	border-radius: 5px;
+}
+#email-person {
+	color: var(--font-special-color);
+}
+#close-modal {
+	display: block;
+	position: absolute;
+	right: 20px;
+	top: 20px;
+	width: 30px;
+	height: 30px;
+	cursor: pointer;
+}
+.modal-window {
+	position: relative;
+}
+.close div {
+	position: absolute;
+	top: 50%;
+	width: 100%;
+	height: 3px;
+	background-color: var(--brand-color);
+	transition: transform 1s ease;
+}
+.close div.active:first-child {
+	transform: rotate(45deg);
+}
+.close div.active:last-child {
+	transform: rotate(-45deg);
+}
+#close-nav:hover div,
+#close-modal:hover div {
+	transform: rotate(0);
 }
 /*=====END Modal Styles=====*/
 
@@ -1050,23 +1094,7 @@ object[class*=-img] {
 		width: 40px;
 		height: 40px;
 		display: block;
-	}
-	.close div {
-		position: absolute;
-		top: 50%;
-		width: 100%;
-		height: 3px;
-		background-color: var(--brand-color);
-		transition: transform 1s ease;
-	}
-	.close div.active:first-child {
-		transform: rotate(45deg);
-	}
-	.close div.active:last-child {
-		transform: rotate(-45deg);
-	}
-	.close:hover div {
-		transform: rotate(0);
+		cursor: pointer;
 	}
 	.nav.active {
 		transform: translateX(0%);

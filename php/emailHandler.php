@@ -20,10 +20,21 @@ if ($_SERVER['REQUEST_METHOD'] == 'OPTIONS') {
     exit(0);
 }
 
+//Устанавливаем ip адреса допустимые для предоставления ответа
+$ips = ['37.46.62.200'];
+if (!in_array($_SERVER['REMOTE_ADDR'], $ips)) {
+    http_response_code(403); //устанавливаем код ответа сервера
+    echo 'Access Denied';
+    die();
+}
 //Получаем body из fetch запроса
 $postData = file_get_contents('php://input');
 //Декодируем json в ассоциативный массив
 $data = json_decode($postData, true);
+
+foreach($data as $key => $value) {
+    $data[$key] = htmlspecialchars(trim($value));
+}
 
 $data['answerFromServer'] = 'ok';
 
