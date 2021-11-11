@@ -65,6 +65,8 @@ window.addEventListener('DOMContentLoaded', function() {
 		form.addEventListener('submit', function(e) {
 			e.preventDefault();
 
+			loader.fadeIn()
+			modalWrap.fadeIn()
 			let body = {},
 				data = new FormData(form);
 
@@ -81,8 +83,8 @@ window.addEventListener('DOMContentLoaded', function() {
 				body: JSON.stringify(body)
 			})
 			.then(response => {
-					loader.fadeIn()
-					modalWrap.fadeIn()
+
+
 
 					if (!response.ok) throw Error(response.statusText);
 					return response.json();
