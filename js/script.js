@@ -84,12 +84,11 @@ window.addEventListener('DOMContentLoaded', function() {
 			})
 			.then(response => {
 
-
-
 					if (!response.ok) throw Error(response.statusText);
 					return response.json();
 			})
 			.then(data => {
+				if (data.msgSendError) throw Error(data.msgSendError)
 				setTimeout(() => {
 					loader.fadeOut();
 					$('.modal-window').html(htmlSuccess);

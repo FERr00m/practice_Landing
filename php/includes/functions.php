@@ -53,7 +53,7 @@ function check_captcha($res) {
   return $_SESSION['captcha'] == $res;
 }
 
-function send_mail($fields, $mail_settings) {
+function send_mail($fields, $mail_settings, $template) {
   $mail = new \PHPMailer\PHPMailer\PHPMailer();
 
   try {
@@ -94,11 +94,13 @@ function send_mail($fields, $mail_settings) {
         <td style='padding: 10px; border: #e9e9e9 1px solid;'>{$value['value']}</td></tr>";
     }
     */
-    $mail->Body = "<table style='width: 100%;'>$message</table>";
+    //$mail->Body = "<table style='width: 100%;'>$message</table>";
+
+      $mail->Body = $template;
 
     if (!$mail->send()) {
       return false;
-    };
+    }
     return true;
   } catch (Exception $e) {
       echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";

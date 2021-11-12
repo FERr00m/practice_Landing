@@ -42,13 +42,13 @@ $fields = [
 
 //Данные из mailtrap.io для тестов
 $mail_settings = [
-  'host' => 'smtp.mailtrap.io',
+  'host' => 'smtp.mail.ru',
   'smtp_auth' => true,
-  'username' => '',
+  'username' => 'testdev@internet.ru',
   'password' => '',
-  'smtp_secure' => null, //ssl (нужно установить, когда реальная почта)
-  'port' => 2525,
-  'from_email' => 'test@test.com',
+  'smtp_secure' => 'ssl', //ssl (нужно установить, когда реальная почта)
+  'port' => 465,
+  'from_email' => 'testdev@internet.ru',
   'from_name' => 'My Site, EmailHandler',
   'to_email' => 'user@mail.com',
 ];
