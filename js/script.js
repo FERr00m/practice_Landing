@@ -39,31 +39,38 @@ window.addEventListener('DOMContentLoaded', function() {
 	}
 
 	try {
+		//form submit
 		const form = document.getElementById('form');
 
-		const modalWrap = $('.modal-wrap'),
-			modalWindowWrap = $('.modal-window-wrap'),
+		const modalWrap = $('#modal-form'),
+			modalWindowWrap = $('.modal-form-wrap'),
 			loader = $('.loader'),
-			closeModal = $('#close-modal');
+			inputEmail = document.querySelector('.form-input'),
+			formAlert = $('.form-alert');
 
 		const htmlSuccess = `<p>Thank you! :)</p>
 			<p>On your email: <span id="email-person"></span> we send a letter</p>`;htmlFailed = `<p>Something went <span class="special">wrong</span> :(</p>
 				<p>Try again, please.</p>`
 
-			modalWrap.on('click', function(e) {
-			if (e.target.id === 'modal') {
-				modalWrap.fadeOut('slow')
-				modalWindowWrap.fadeOut('slow')
-			}
-
-		})
-		closeModal.on('click', function() {
-			modalWrap.fadeOut('slow')
-			modalWindowWrap.fadeOut('slow')
-		})
+		inputEmail.addEventListener('input', function() {
+			console.log(this.value);
+      this.value = this.value.replace(/[^a-z@\-_.!~*'0-9]/gi, '');
+    });
 
 		form.addEventListener('submit', function(e) {
 			e.preventDefault();
+			if (!/^\w+@\w+\.\w{2,}$/.test(inputEmail.value)) {
+				formAlert.animate({
+					opacity: 1,
+					height: '30px'
+				});
+				return
+			} else {
+				formAlert.animate({
+					opacity: 0,
+					height: 0
+				});
+			}
 
 			loader.fadeIn()
 			modalWrap.fadeIn()
@@ -74,16 +81,18 @@ window.addEventListener('DOMContentLoaded', function() {
         body[key] = val.toLowerCase().trim();
       });
 
-			fetch(`https://melalex.ru/handlers/emailHandler.php`, {
-				method: "POST",
-				headers: {
-					'Content-type': 'application/json; charset=utf-8'
-				},
-				credentials: 'include',
-				body: JSON.stringify(body)
+			let url = 'https://melalex.ru/handlers/emailHandler.php',
+				fakeUrl = '/php/fakeServer.json';
+
+			fetch(`${fakeUrl}`, {
+				// method: "POST",
+				// headers: {
+				// 	'Content-type': 'application/json; charset=utf-8'
+				// },
+				// credentials: 'include',
+				// body: JSON.stringify(body)
 			})
 			.then(response => {
-
 					if (!response.ok) throw Error(response.statusText);
 					return response.json();
 			})
@@ -127,6 +136,48 @@ window.addEventListener('DOMContentLoaded', function() {
 			nav.toggleClass('active');
 			body.toggleClass('nav-active');
 			divs.toggleClass('active');
+		})
+	} catch (error) {
+		console.error(error);
+	}
+
+	try {
+		const closeModalBtns = $('.close-modal'),
+			modalWraps = $('.modal-wrap');
+
+		closeModalBtns.each(function() {
+			$(this).on('click', function(e) {
+				let target = $(e.target);
+				target.closest('.modal-wrap').fadeOut();
+				target.closest('.modal-window-wrap').fadeOut();
+			})
+		})
+
+		modalWraps.each(function() {
+			$(this).on('click', function(e) {
+				let target = $(e.target);
+				if (target.is('.modal-wrap'))
+					target.closest('.modal-wrap').fadeOut();
+					target.find('.modal-window-wrap').fadeOut();
+			})
+		})
+
+		// modalWrap.on('click', function(e) {
+		// 	if (e.target.matches('.modal-wrap')) {
+		// 		modalWrap.fadeOut('slow')
+		// 		modalWindowWrap.fadeOut('slow')
+		// 	}
+
+		// 	})
+
+		//Modals sign-in & sign-up
+		const modalSignIn = $('#modal-sign-in'),
+			signInBtn = $('.jq-sign-in'),
+			signUpBtn = $('.jq-sign-up'),
+			modalSignUp = $('#modal-sign-up');
+
+		signInBtn.on('click', function() {
+			modalSignIn.fadeIn()
 		})
 	} catch (error) {
 		console.error(error);

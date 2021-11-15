@@ -833,6 +833,12 @@ span.special {
 	width: 128px;
 	flex-shrink: 0;
 }
+.form-alert {
+	opacity: 0;
+	height: 0;
+	text-align: center;
+	color: red;
+}
 .form-input {
 	border: none;
 	border-radius: 5px 0 0 5px;
@@ -1015,7 +1021,7 @@ span.special {
 #email-person {
 	color: var(--font-special-color);
 }
-#close-modal {
+.close-modal {
 	display: block;
 	position: absolute;
 	right: 20px;
@@ -1041,8 +1047,8 @@ span.special {
 .close div.active:last-child {
 	transform: rotate(-45deg);
 }
-#close-nav:hover div,
-#close-modal:hover div {
+.close.close-modal:hover div,
+.close.close-modal:hover div {
 	transform: rotate(0);
 }
 /*=====END Modal Styles=====*/

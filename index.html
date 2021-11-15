@@ -454,10 +454,12 @@
 
 					<form id="form" method="post">
 						<div class="inputs-wrap">
-							<input class="form-input" type="email" name="email" placeholder="Your Email" required>
+							<input class="form-input" type="email" name="email" placeholder="Your Email">
 
 							<button class="btn form-btn hvr-bubble-float-left" type="submit">send</button>
 						</div>
+
+						<div class="form-alert">Enter email in the format example@example.com</div>
 
 						<div class="form-agreement-wrap">
 							<label class="check option">
@@ -574,11 +576,12 @@
 	</footer>
 	<!-- End Footer -->
 
-	<!-- Modal -->
-	<div class="modal-wrap" id="modal">
+	<!-- Modals -->
+		<!-- Form modal -->
+	<div class="modal-wrap" id="modal-form">
 		<img class="loader center-absolute" src="./img/loader.svg" width="70" height="70" alt="loader">
-		<div class="modal-window-wrap center-absolute">
-			<div class="close" id="close-modal">
+		<div class="modal-window-wrap modal-form-wrap center-absolute">
+			<div class="close close-modal">
 				<div class="active"></div>
 				<div class="active"></div>
 			</div>
@@ -587,7 +590,19 @@
 			</div>
 		</div>
 	</div>
-	<!-- END Modal -->
+
+		<!-- Sign in modal -->
+	<div class="modal-wrap" id="modal-sign-in">
+		<div class="modal-window-wrap center-absolute">
+			<div class="close close-modal">
+				<div class="active"></div>
+				<div class="active"></div>
+			</div>
+
+			sdfd
+		</div>
+	</div>
+	<!-- END Modals -->
 	<!-- JS -->
 	<script src="./js/jquery-3.6.0.min.js"></script>
 	<script src="./js/swiper-bundle.min.js"></script>
